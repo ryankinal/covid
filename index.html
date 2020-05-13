@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<title>Ryan's Covid Crap</title>
+		<script src="https://kit.fontawesome.com/58e5c80e40.js" crossorigin="anonymous"></script>
+		<meta name="viewport" content="width=device-width, initial-scale=1.0">
+		<link href="https://fonts.googleapis.com/css?family=Roboto&display=swap" rel="stylesheet" />
+		<style type="text/css">
+			body {
+				padding: 25px;
+				background-color: #333;
+				color: #FFF;
+				font-family: Roboto, sans-serif;
+			}
+
+			article {
+				padding: 25px;
+				margin: 25px 0 50px 0;
+				background-color: #FFF;
+				color: #333;
+			}
+
+			h1, h2, h3, h4 {
+				margin: 0 0 15px 0;
+			}
+
+			article > div {
+				border: solid #999 1px;
+				border-radius: 15px;
+				margin: 0 0 25px 0;
+				padding: 15px;
+			}
+
+			article > div:last-child {
+				margin-bottom: 0;
+			}
+
+			select {
+				-webkit-appearance: none;
+				border: solid #999 1px;
+				color: #333;
+				padding: 8px 32px 8px 16px;
+				position: relative;
+				background-color: transparent;
+				border-radius: 7px;
+				outline: none;
+			}
+
+			.selector {
+				position: relative;
+				display: inline-block;
+				height: 30px;
+				background-color: #FFF;
+				border-radius: 7px;
+			}
+
+			.selector .chevron {
+				color: #333;
+				position: absolute;
+				right: 6px;
+				top: 50%;
+				transform: translateY(-50%);
+				margin-top: 1px;
+				font-size: 14px;
+			}
+
+			#loading {
+				display: none;
+			}
+
+			.loading #loading {
+				display: block;
+			}
+
+			.loading article {
+				display: none;
+			}
+		</style>
+	</head>
+	<body class="loading">
+		<header>
+			<h1>Ryan's Covid Info</h1>
+			<p>Because nobody's giving me the numbers I want.</p>
+			<div class="selector">
+				<span class="chevron"><i class="fas fa-chevron-down"></i></span>
+				<select id="graphSelector">
+					<option value="percent">Daily Percentages</option>
+					<option value="absolute">Daily Absolute Numbers</option>
+					<option value="cumulative">Cumulative Numbers</option>
+					
+				</select>
+			</div>
+		</header>
+		<div id="loading"><i class="fas fa-spinner fa-spin"></i></div>
+		<div id="graphs"></div>
+		<script src="https://code.highcharts.com/highcharts.js"></script>
+		<script src="https://code.highcharts.com/modules/series-label.js"></script>
+		<script src="https://code.highcharts.com/modules/exporting.js"></script>
+		<script src="https://code.highcharts.com/modules/export-data.js"></script>
+		<script src="https://code.highcharts.com/modules/accessibility.js"></script>
+		<script type="module" src="graphs.js"></script>
+	</body>
+</html>
