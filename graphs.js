@@ -18,11 +18,12 @@ let dates = [];
 let date = new Date();
 let year = date.getYear();
 let month = date.getMonth();
-let day = date.getDate() - 30;
+let days = 60; 
+let day = date.getDate() - days;
 
 date = new Date(year, month, day);
 
-for (let i = 0; i < 29; i++) {
+for (let i = 0; i < days - 1; i++) {
 	date = new Date(1900 + year, date.getMonth(), date.getDate() + 1);
 	month = date.getMonth() + 1;
 
