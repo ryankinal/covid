@@ -18,7 +18,7 @@ let dates = [];
 let date = new Date();
 let year = date.getYear();
 let month = date.getMonth();
-let days = 60; 
+let days = 250; 
 let day = date.getDate() - days;
 
 date = new Date(year, month, day);

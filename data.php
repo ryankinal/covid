@@ -15,6 +15,7 @@ if (!$testDate) {
 }
 
 if ($testDate) {
+	$date = new DateTime($testDate);
 	$http = new HTTP();
 
 	$httpConfig = array(
@@ -45,7 +46,7 @@ if ($testDate) {
 		$return = array(
 			'testing' => array(),
 			'counties' => array()
-		);
+		);		
 
 		if (is_array($response['data'])) {
 			foreach ($response['data'] as $county) {
@@ -82,15 +83,17 @@ if ($testDate) {
 
 		$return['testing']['total'] = $total;
 
-		$date = new DateTime($testDate);
 		$encoded = json_encode($return, JSON_PRETTY_PRINT);
 		file_put_contents('data/'.$date->format('Y-m-d').'.json', $encoded);
 		echo $encoded;
 	} else {
 		echo json_encode(array());
+		file_put_contents('data/'.$date->format('Y-m-d').'.json', json_encode(array()));
+		header("HTTP/1.0 404 Not Found");
 	}
 } else {
 	echo json_encode(array());
+	header("HTTP/1.0 404 Not Found");
 }
 
 ?>

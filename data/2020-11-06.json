@@ -1,0 +1,13 @@
+{
+    "testing": {
+        "total": {
+            "county": "all",
+            "test_date": "2020-11-06T00:00:00",
+            "new_positives": 0,
+            "cumulative_number_of_positives": 0,
+            "total_number_of_tests": 0,
+            "cumulative_number_of_tests": 0
+        }
+    },
+    "counties": []
+}
